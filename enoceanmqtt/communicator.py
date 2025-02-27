@@ -363,7 +363,6 @@ class Communicator:
                     found_property = self._handle_data_packet( packet, cur_sensor, mqtt_json)
                     if not found_property:
                         logging.warning("message not interpretable: %s", cur_sensor['name'])
-                        logging.warning("Packet: %s", packet)
                     else:
                         self._publish_mqtt(cur_sensor, mqtt_json)
                 else:
